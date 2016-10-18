@@ -42,6 +42,8 @@ namespace AttendanceAndPayrollSystem {
         
         private uvwAttendanceDataTable tableuvwAttendance;
         
+        private uvwPayrollDataTable tableuvwPayroll;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -96,6 +98,9 @@ namespace AttendanceAndPayrollSystem {
                 }
                 if ((ds.Tables["uvwAttendance"] != null)) {
                     base.Tables.Add(new uvwAttendanceDataTable(ds.Tables["uvwAttendance"]));
+                }
+                if ((ds.Tables["uvwPayroll"] != null)) {
+                    base.Tables.Add(new uvwPayrollDataTable(ds.Tables["uvwPayroll"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -207,6 +212,16 @@ namespace AttendanceAndPayrollSystem {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public uvwPayrollDataTable uvwPayroll {
+            get {
+                return this.tableuvwPayroll;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -299,6 +314,9 @@ namespace AttendanceAndPayrollSystem {
                 if ((ds.Tables["uvwAttendance"] != null)) {
                     base.Tables.Add(new uvwAttendanceDataTable(ds.Tables["uvwAttendance"]));
                 }
+                if ((ds.Tables["uvwPayroll"] != null)) {
+                    base.Tables.Add(new uvwPayrollDataTable(ds.Tables["uvwPayroll"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -386,6 +404,12 @@ namespace AttendanceAndPayrollSystem {
                     this.tableuvwAttendance.InitVars();
                 }
             }
+            this.tableuvwPayroll = ((uvwPayrollDataTable)(base.Tables["uvwPayroll"]));
+            if ((initTable == true)) {
+                if ((this.tableuvwPayroll != null)) {
+                    this.tableuvwPayroll.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -414,6 +438,8 @@ namespace AttendanceAndPayrollSystem {
             base.Tables.Add(this.tableUsers);
             this.tableuvwAttendance = new uvwAttendanceDataTable();
             base.Tables.Add(this.tableuvwAttendance);
+            this.tableuvwPayroll = new uvwPayrollDataTable();
+            base.Tables.Add(this.tableuvwPayroll);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -467,6 +493,12 @@ namespace AttendanceAndPayrollSystem {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private bool ShouldSerializeuvwAttendance() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private bool ShouldSerializeuvwPayroll() {
             return false;
         }
         
@@ -551,6 +583,9 @@ namespace AttendanceAndPayrollSystem {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public delegate void uvwAttendanceRowChangeEventHandler(object sender, uvwAttendanceRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public delegate void uvwPayrollRowChangeEventHandler(object sender, uvwPayrollRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -3840,6 +3875,483 @@ namespace AttendanceAndPayrollSystem {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class uvwPayrollDataTable : global::System.Data.TypedTableBase<uvwPayrollRow> {
+            
+            private global::System.Data.DataColumn columnEmployeeId;
+            
+            private global::System.Data.DataColumn columnLastName;
+            
+            private global::System.Data.DataColumn columnFirstName;
+            
+            private global::System.Data.DataColumn columnPayrollId;
+            
+            private global::System.Data.DataColumn columnPayPeriodStart;
+            
+            private global::System.Data.DataColumn columnPayPeriodEnd;
+            
+            private global::System.Data.DataColumn columnDailyRate;
+            
+            private global::System.Data.DataColumn columnTotalRegularHoursRendered;
+            
+            private global::System.Data.DataColumn columnTotalOTHours;
+            
+            private global::System.Data.DataColumn columnPremiumSSS;
+            
+            private global::System.Data.DataColumn columnPremiumPhilHealth;
+            
+            private global::System.Data.DataColumn columnPremiumPagibig;
+            
+            private global::System.Data.DataColumn columnPremiumBirTax;
+            
+            private global::System.Data.DataColumn columnHdmfLoan;
+            
+            private global::System.Data.DataColumn columnSSSLoan;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uvwPayrollDataTable() {
+                this.TableName = "uvwPayroll";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal uvwPayrollDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected uvwPayrollDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn EmployeeIdColumn {
+                get {
+                    return this.columnEmployeeId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn LastNameColumn {
+                get {
+                    return this.columnLastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn FirstNameColumn {
+                get {
+                    return this.columnFirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PayrollIdColumn {
+                get {
+                    return this.columnPayrollId;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PayPeriodStartColumn {
+                get {
+                    return this.columnPayPeriodStart;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PayPeriodEndColumn {
+                get {
+                    return this.columnPayPeriodEnd;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn DailyRateColumn {
+                get {
+                    return this.columnDailyRate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalRegularHoursRenderedColumn {
+                get {
+                    return this.columnTotalRegularHoursRendered;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TotalOTHoursColumn {
+                get {
+                    return this.columnTotalOTHours;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PremiumSSSColumn {
+                get {
+                    return this.columnPremiumSSS;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PremiumPhilHealthColumn {
+                get {
+                    return this.columnPremiumPhilHealth;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PremiumPagibigColumn {
+                get {
+                    return this.columnPremiumPagibig;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn PremiumBirTaxColumn {
+                get {
+                    return this.columnPremiumBirTax;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn HdmfLoanColumn {
+                get {
+                    return this.columnHdmfLoan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn SSSLoanColumn {
+                get {
+                    return this.columnSSSLoan;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uvwPayrollRow this[int index] {
+                get {
+                    return ((uvwPayrollRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event uvwPayrollRowChangeEventHandler uvwPayrollRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event uvwPayrollRowChangeEventHandler uvwPayrollRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event uvwPayrollRowChangeEventHandler uvwPayrollRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public event uvwPayrollRowChangeEventHandler uvwPayrollRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void AdduvwPayrollRow(uvwPayrollRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uvwPayrollRow AdduvwPayrollRow(string LastName, string FirstName, System.DateTime PayPeriodStart, System.DateTime PayPeriodEnd, double DailyRate, double TotalRegularHoursRendered, double TotalOTHours, double PremiumSSS, double PremiumPhilHealth, double PremiumPagibig, double PremiumBirTax, double HdmfLoan, double SSSLoan) {
+                uvwPayrollRow rowuvwPayrollRow = ((uvwPayrollRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        LastName,
+                        FirstName,
+                        null,
+                        PayPeriodStart,
+                        PayPeriodEnd,
+                        DailyRate,
+                        TotalRegularHoursRendered,
+                        TotalOTHours,
+                        PremiumSSS,
+                        PremiumPhilHealth,
+                        PremiumPagibig,
+                        PremiumBirTax,
+                        HdmfLoan,
+                        SSSLoan};
+                rowuvwPayrollRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowuvwPayrollRow);
+                return rowuvwPayrollRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uvwPayrollRow FindByEmployeeIdPayrollId(int EmployeeId, int PayrollId) {
+                return ((uvwPayrollRow)(this.Rows.Find(new object[] {
+                            EmployeeId,
+                            PayrollId})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                uvwPayrollDataTable cln = ((uvwPayrollDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new uvwPayrollDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal void InitVars() {
+                this.columnEmployeeId = base.Columns["EmployeeId"];
+                this.columnLastName = base.Columns["LastName"];
+                this.columnFirstName = base.Columns["FirstName"];
+                this.columnPayrollId = base.Columns["PayrollId"];
+                this.columnPayPeriodStart = base.Columns["PayPeriodStart"];
+                this.columnPayPeriodEnd = base.Columns["PayPeriodEnd"];
+                this.columnDailyRate = base.Columns["DailyRate"];
+                this.columnTotalRegularHoursRendered = base.Columns["TotalRegularHoursRendered"];
+                this.columnTotalOTHours = base.Columns["TotalOTHours"];
+                this.columnPremiumSSS = base.Columns["PremiumSSS"];
+                this.columnPremiumPhilHealth = base.Columns["PremiumPhilHealth"];
+                this.columnPremiumPagibig = base.Columns["PremiumPagibig"];
+                this.columnPremiumBirTax = base.Columns["PremiumBirTax"];
+                this.columnHdmfLoan = base.Columns["HdmfLoan"];
+                this.columnSSSLoan = base.Columns["SSSLoan"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            private void InitClass() {
+                this.columnEmployeeId = new global::System.Data.DataColumn("EmployeeId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmployeeId);
+                this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLastName);
+                this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstName);
+                this.columnPayrollId = new global::System.Data.DataColumn("PayrollId", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPayrollId);
+                this.columnPayPeriodStart = new global::System.Data.DataColumn("PayPeriodStart", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPayPeriodStart);
+                this.columnPayPeriodEnd = new global::System.Data.DataColumn("PayPeriodEnd", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPayPeriodEnd);
+                this.columnDailyRate = new global::System.Data.DataColumn("DailyRate", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnDailyRate);
+                this.columnTotalRegularHoursRendered = new global::System.Data.DataColumn("TotalRegularHoursRendered", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalRegularHoursRendered);
+                this.columnTotalOTHours = new global::System.Data.DataColumn("TotalOTHours", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTotalOTHours);
+                this.columnPremiumSSS = new global::System.Data.DataColumn("PremiumSSS", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPremiumSSS);
+                this.columnPremiumPhilHealth = new global::System.Data.DataColumn("PremiumPhilHealth", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPremiumPhilHealth);
+                this.columnPremiumPagibig = new global::System.Data.DataColumn("PremiumPagibig", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPremiumPagibig);
+                this.columnPremiumBirTax = new global::System.Data.DataColumn("PremiumBirTax", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPremiumBirTax);
+                this.columnHdmfLoan = new global::System.Data.DataColumn("HdmfLoan", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHdmfLoan);
+                this.columnSSSLoan = new global::System.Data.DataColumn("SSSLoan", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSSSLoan);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnEmployeeId,
+                                this.columnPayrollId}, true));
+                this.columnEmployeeId.AutoIncrement = true;
+                this.columnEmployeeId.AutoIncrementSeed = -1;
+                this.columnEmployeeId.AutoIncrementStep = -1;
+                this.columnEmployeeId.AllowDBNull = false;
+                this.columnEmployeeId.ReadOnly = true;
+                this.columnLastName.AllowDBNull = false;
+                this.columnLastName.MaxLength = 50;
+                this.columnFirstName.AllowDBNull = false;
+                this.columnFirstName.MaxLength = 50;
+                this.columnPayrollId.AutoIncrement = true;
+                this.columnPayrollId.AutoIncrementSeed = -1;
+                this.columnPayrollId.AutoIncrementStep = -1;
+                this.columnPayrollId.AllowDBNull = false;
+                this.columnPayrollId.ReadOnly = true;
+                this.columnPayPeriodStart.AllowDBNull = false;
+                this.columnPayPeriodEnd.AllowDBNull = false;
+                this.columnDailyRate.AllowDBNull = false;
+                this.columnTotalRegularHoursRendered.AllowDBNull = false;
+                this.columnTotalOTHours.AllowDBNull = false;
+                this.columnPremiumSSS.AllowDBNull = false;
+                this.columnPremiumPhilHealth.AllowDBNull = false;
+                this.columnPremiumPagibig.AllowDBNull = false;
+                this.columnPremiumBirTax.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uvwPayrollRow NewuvwPayrollRow() {
+                return ((uvwPayrollRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new uvwPayrollRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(uvwPayrollRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.uvwPayrollRowChanged != null)) {
+                    this.uvwPayrollRowChanged(this, new uvwPayrollRowChangeEvent(((uvwPayrollRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.uvwPayrollRowChanging != null)) {
+                    this.uvwPayrollRowChanging(this, new uvwPayrollRowChangeEvent(((uvwPayrollRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.uvwPayrollRowDeleted != null)) {
+                    this.uvwPayrollRowDeleted(this, new uvwPayrollRowChangeEvent(((uvwPayrollRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.uvwPayrollRowDeleting != null)) {
+                    this.uvwPayrollRowDeleting(this, new uvwPayrollRowChangeEvent(((uvwPayrollRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void RemoveuvwPayrollRow(uvwPayrollRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                apsDataSet ds = new apsDataSet();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "uvwPayrollDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class AttendanceRow : global::System.Data.DataRow {
@@ -4892,6 +5404,220 @@ namespace AttendanceAndPayrollSystem {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class uvwPayrollRow : global::System.Data.DataRow {
+            
+            private uvwPayrollDataTable tableuvwPayroll;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            internal uvwPayrollRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableuvwPayroll = ((uvwPayrollDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int EmployeeId {
+                get {
+                    return ((int)(this[this.tableuvwPayroll.EmployeeIdColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.EmployeeIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string LastName {
+                get {
+                    return ((string)(this[this.tableuvwPayroll.LastNameColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.LastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string FirstName {
+                get {
+                    return ((string)(this[this.tableuvwPayroll.FirstNameColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.FirstNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public int PayrollId {
+                get {
+                    return ((int)(this[this.tableuvwPayroll.PayrollIdColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.PayrollIdColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime PayPeriodStart {
+                get {
+                    return ((global::System.DateTime)(this[this.tableuvwPayroll.PayPeriodStartColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.PayPeriodStartColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public System.DateTime PayPeriodEnd {
+                get {
+                    return ((global::System.DateTime)(this[this.tableuvwPayroll.PayPeriodEndColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.PayPeriodEndColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double DailyRate {
+                get {
+                    return ((double)(this[this.tableuvwPayroll.DailyRateColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.DailyRateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double TotalRegularHoursRendered {
+                get {
+                    return ((double)(this[this.tableuvwPayroll.TotalRegularHoursRenderedColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.TotalRegularHoursRenderedColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double TotalOTHours {
+                get {
+                    return ((double)(this[this.tableuvwPayroll.TotalOTHoursColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.TotalOTHoursColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double PremiumSSS {
+                get {
+                    return ((double)(this[this.tableuvwPayroll.PremiumSSSColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.PremiumSSSColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double PremiumPhilHealth {
+                get {
+                    return ((double)(this[this.tableuvwPayroll.PremiumPhilHealthColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.PremiumPhilHealthColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double PremiumPagibig {
+                get {
+                    return ((double)(this[this.tableuvwPayroll.PremiumPagibigColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.PremiumPagibigColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double PremiumBirTax {
+                get {
+                    return ((double)(this[this.tableuvwPayroll.PremiumBirTaxColumn]));
+                }
+                set {
+                    this[this.tableuvwPayroll.PremiumBirTaxColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double HdmfLoan {
+                get {
+                    try {
+                        return ((double)(this[this.tableuvwPayroll.HdmfLoanColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HdmfLoan\' in table \'uvwPayroll\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableuvwPayroll.HdmfLoanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public double SSSLoan {
+                get {
+                    try {
+                        return ((double)(this[this.tableuvwPayroll.SSSLoanColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SSSLoan\' in table \'uvwPayroll\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableuvwPayroll.SSSLoanColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsHdmfLoanNull() {
+                return this.IsNull(this.tableuvwPayroll.HdmfLoanColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetHdmfLoanNull() {
+                this[this.tableuvwPayroll.HdmfLoanColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsSSSLoanNull() {
+                return this.IsNull(this.tableuvwPayroll.SSSLoanColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetSSSLoanNull() {
+                this[this.tableuvwPayroll.SSSLoanColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
@@ -5183,6 +5909,40 @@ namespace AttendanceAndPayrollSystem {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public uvwAttendanceRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public class uvwPayrollRowChangeEvent : global::System.EventArgs {
+            
+            private uvwPayrollRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uvwPayrollRowChangeEvent(uvwPayrollRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public uvwPayrollRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8815,6 +9575,191 @@ FROM            dbo.Employees LEFT OUTER JOIN
         public virtual apsDataSet.uvwAttendanceDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             apsDataSet.uvwAttendanceDataTable dataTable = new apsDataSet.uvwAttendanceDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class uvwPayrollTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::System.Data.SqlClient.SqlDataAdapter _adapter;
+        
+        private global::System.Data.SqlClient.SqlConnection _connection;
+        
+        private global::System.Data.SqlClient.SqlTransaction _transaction;
+        
+        private global::System.Data.SqlClient.SqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public uvwPayrollTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected internal global::System.Data.SqlClient.SqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::System.Data.SqlClient.SqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        internal global::System.Data.SqlClient.SqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        protected global::System.Data.SqlClient.SqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "uvwPayroll";
+            tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId");
+            tableMapping.ColumnMappings.Add("LastName", "LastName");
+            tableMapping.ColumnMappings.Add("FirstName", "FirstName");
+            tableMapping.ColumnMappings.Add("PayrollId", "PayrollId");
+            tableMapping.ColumnMappings.Add("PayPeriodStart", "PayPeriodStart");
+            tableMapping.ColumnMappings.Add("PayPeriodEnd", "PayPeriodEnd");
+            tableMapping.ColumnMappings.Add("DailyRate", "DailyRate");
+            tableMapping.ColumnMappings.Add("TotalRegularHoursRendered", "TotalRegularHoursRendered");
+            tableMapping.ColumnMappings.Add("TotalOTHours", "TotalOTHours");
+            tableMapping.ColumnMappings.Add("PremiumSSS", "PremiumSSS");
+            tableMapping.ColumnMappings.Add("PremiumPhilHealth", "PremiumPhilHealth");
+            tableMapping.ColumnMappings.Add("PremiumPagibig", "PremiumPagibig");
+            tableMapping.ColumnMappings.Add("PremiumBirTax", "PremiumBirTax");
+            tableMapping.ColumnMappings.Add("HdmfLoan", "HdmfLoan");
+            tableMapping.ColumnMappings.Add("SSSLoan", "SSSLoan");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::System.Data.SqlClient.SqlConnection();
+            this._connection.ConnectionString = global::AttendanceAndPayrollSystem.Properties.Settings.Default.apsConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = @"SELECT        dbo.Employees.EmployeeId, dbo.Employees.LastName, dbo.Employees.FirstName, dbo.Payroll.PayrollId, dbo.Payroll.PayPeriodStart, dbo.Payroll.PayPeriodEnd, dbo.Payroll.DailyRate, 
+                         dbo.Payroll.TotalRegularHoursRendered, dbo.Payroll.TotalOTHours, dbo.Payroll.PremiumSSS, dbo.Payroll.PremiumPhilHealth, dbo.Payroll.PremiumPagibig, dbo.Payroll.PremiumBirTax, dbo.Payroll.HdmfLoan, 
+                         dbo.Payroll.SSSLoan
+FROM            dbo.Payroll INNER JOIN
+                         dbo.Employees ON dbo.Payroll.EmployeeId = dbo.Employees.EmployeeId";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(apsDataSet.uvwPayrollDataTable dataTable) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual apsDataSet.uvwPayrollDataTable GetData() {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            apsDataSet.uvwPayrollDataTable dataTable = new apsDataSet.uvwPayrollDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

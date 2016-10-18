@@ -657,6 +657,40 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="uvwPayrollTableAdapter" GeneratorDataComponentClassName="uvwPayrollTableAdapter" Name="uvwPayroll" UserDataComponentName="uvwPayrollTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="apsConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.Employees.EmployeeId, dbo.Employees.LastName, dbo.Employees.FirstName, dbo.Payroll.PayrollId, dbo.Payroll.PayPeriodStart, dbo.Payroll.PayPeriodEnd, dbo.Payroll.DailyRate, 
+                         dbo.Payroll.TotalRegularHoursRendered, dbo.Payroll.TotalOTHours, dbo.Payroll.PremiumSSS, dbo.Payroll.PremiumPhilHealth, dbo.Payroll.PremiumPagibig, dbo.Payroll.PremiumBirTax, dbo.Payroll.HdmfLoan, 
+                         dbo.Payroll.SSSLoan
+FROM            dbo.Payroll INNER JOIN
+                         dbo.Employees ON dbo.Payroll.EmployeeId = dbo.Employees.EmployeeId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="EmployeeId" DataSetColumn="EmployeeId" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="PayrollId" DataSetColumn="PayrollId" />
+              <Mapping SourceColumn="PayPeriodStart" DataSetColumn="PayPeriodStart" />
+              <Mapping SourceColumn="PayPeriodEnd" DataSetColumn="PayPeriodEnd" />
+              <Mapping SourceColumn="DailyRate" DataSetColumn="DailyRate" />
+              <Mapping SourceColumn="TotalRegularHoursRendered" DataSetColumn="TotalRegularHoursRendered" />
+              <Mapping SourceColumn="TotalOTHours" DataSetColumn="TotalOTHours" />
+              <Mapping SourceColumn="PremiumSSS" DataSetColumn="PremiumSSS" />
+              <Mapping SourceColumn="PremiumPhilHealth" DataSetColumn="PremiumPhilHealth" />
+              <Mapping SourceColumn="PremiumPagibig" DataSetColumn="PremiumPagibig" />
+              <Mapping SourceColumn="PremiumBirTax" DataSetColumn="PremiumBirTax" />
+              <Mapping SourceColumn="HdmfLoan" DataSetColumn="HdmfLoan" />
+              <Mapping SourceColumn="SSSLoan" DataSetColumn="SSSLoan" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -665,7 +699,7 @@ FROM            dbo.Employees LEFT OUTER JOIN
   <xs:element name="apsDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="apsDataSet" msprop:Generator_UserDSName="apsDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Attendance" msprop:Generator_TableClassName="AttendanceDataTable" msprop:Generator_TableVarName="tableAttendance" msprop:Generator_TablePropName="Attendance" msprop:Generator_RowDeletingName="AttendanceRowDeleting" msprop:Generator_RowChangingName="AttendanceRowChanging" msprop:Generator_RowEvHandlerName="AttendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="AttendanceRowDeleted" msprop:Generator_UserTableName="Attendance" msprop:Generator_RowChangedName="AttendanceRowChanged" msprop:Generator_RowEvArgName="AttendanceRowChangeEvent" msprop:Generator_RowClassName="AttendanceRow">
+        <xs:element name="Attendance" msprop:Generator_TableClassName="AttendanceDataTable" msprop:Generator_TableVarName="tableAttendance" msprop:Generator_RowChangedName="AttendanceRowChanged" msprop:Generator_TablePropName="Attendance" msprop:Generator_RowDeletingName="AttendanceRowDeleting" msprop:Generator_RowChangingName="AttendanceRowChanging" msprop:Generator_RowEvHandlerName="AttendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="AttendanceRowDeleted" msprop:Generator_RowClassName="AttendanceRow" msprop:Generator_UserTableName="Attendance" msprop:Generator_RowEvArgName="AttendanceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="AttendanceId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnAttendanceId" msprop:Generator_ColumnPropNameInRow="AttendanceId" msprop:Generator_ColumnPropNameInTable="AttendanceIdColumn" msprop:Generator_UserColumnName="AttendanceId" type="xs:int" />
@@ -683,7 +717,7 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="EducationalAttainments" msprop:Generator_TableClassName="EducationalAttainmentsDataTable" msprop:Generator_TableVarName="tableEducationalAttainments" msprop:Generator_TablePropName="EducationalAttainments" msprop:Generator_RowDeletingName="EducationalAttainmentsRowDeleting" msprop:Generator_RowChangingName="EducationalAttainmentsRowChanging" msprop:Generator_RowEvHandlerName="EducationalAttainmentsRowChangeEventHandler" msprop:Generator_RowDeletedName="EducationalAttainmentsRowDeleted" msprop:Generator_UserTableName="EducationalAttainments" msprop:Generator_RowChangedName="EducationalAttainmentsRowChanged" msprop:Generator_RowEvArgName="EducationalAttainmentsRowChangeEvent" msprop:Generator_RowClassName="EducationalAttainmentsRow">
+        <xs:element name="EducationalAttainments" msprop:Generator_TableClassName="EducationalAttainmentsDataTable" msprop:Generator_TableVarName="tableEducationalAttainments" msprop:Generator_RowChangedName="EducationalAttainmentsRowChanged" msprop:Generator_TablePropName="EducationalAttainments" msprop:Generator_RowDeletingName="EducationalAttainmentsRowDeleting" msprop:Generator_RowChangingName="EducationalAttainmentsRowChanging" msprop:Generator_RowEvHandlerName="EducationalAttainmentsRowChangeEventHandler" msprop:Generator_RowDeletedName="EducationalAttainmentsRowDeleted" msprop:Generator_RowClassName="EducationalAttainmentsRow" msprop:Generator_UserTableName="EducationalAttainments" msprop:Generator_RowEvArgName="EducationalAttainmentsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EducationalAttainmentId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEducationalAttainmentId" msprop:Generator_ColumnPropNameInRow="EducationalAttainmentId" msprop:Generator_ColumnPropNameInTable="EducationalAttainmentIdColumn" msprop:Generator_UserColumnName="EducationalAttainmentId" type="xs:int" />
@@ -712,7 +746,7 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="EmployeeLeaves" msprop:Generator_TableClassName="EmployeeLeavesDataTable" msprop:Generator_TableVarName="tableEmployeeLeaves" msprop:Generator_TablePropName="EmployeeLeaves" msprop:Generator_RowDeletingName="EmployeeLeavesRowDeleting" msprop:Generator_RowChangingName="EmployeeLeavesRowChanging" msprop:Generator_RowEvHandlerName="EmployeeLeavesRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeLeavesRowDeleted" msprop:Generator_UserTableName="EmployeeLeaves" msprop:Generator_RowChangedName="EmployeeLeavesRowChanged" msprop:Generator_RowEvArgName="EmployeeLeavesRowChangeEvent" msprop:Generator_RowClassName="EmployeeLeavesRow">
+        <xs:element name="EmployeeLeaves" msprop:Generator_TableClassName="EmployeeLeavesDataTable" msprop:Generator_TableVarName="tableEmployeeLeaves" msprop:Generator_RowChangedName="EmployeeLeavesRowChanged" msprop:Generator_TablePropName="EmployeeLeaves" msprop:Generator_RowDeletingName="EmployeeLeavesRowDeleting" msprop:Generator_RowChangingName="EmployeeLeavesRowChanging" msprop:Generator_RowEvHandlerName="EmployeeLeavesRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeeLeavesRowDeleted" msprop:Generator_RowClassName="EmployeeLeavesRow" msprop:Generator_UserTableName="EmployeeLeaves" msprop:Generator_RowEvArgName="EmployeeLeavesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EmployeeLeaveId" msprop:Generator_ColumnVarNameInTable="columnEmployeeLeaveId" msprop:Generator_ColumnPropNameInRow="EmployeeLeaveId" msprop:Generator_ColumnPropNameInTable="EmployeeLeaveIdColumn" msprop:Generator_UserColumnName="EmployeeLeaveId" type="xs:int" />
@@ -730,7 +764,7 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Employees" msprop:Generator_TableClassName="EmployeesDataTable" msprop:Generator_TableVarName="tableEmployees" msprop:Generator_TablePropName="Employees" msprop:Generator_RowDeletingName="EmployeesRowDeleting" msprop:Generator_RowChangingName="EmployeesRowChanging" msprop:Generator_RowEvHandlerName="EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeesRowDeleted" msprop:Generator_UserTableName="Employees" msprop:Generator_RowChangedName="EmployeesRowChanged" msprop:Generator_RowEvArgName="EmployeesRowChangeEvent" msprop:Generator_RowClassName="EmployeesRow">
+        <xs:element name="Employees" msprop:Generator_TableClassName="EmployeesDataTable" msprop:Generator_TableVarName="tableEmployees" msprop:Generator_RowChangedName="EmployeesRowChanged" msprop:Generator_TablePropName="Employees" msprop:Generator_RowDeletingName="EmployeesRowDeleting" msprop:Generator_RowChangingName="EmployeesRowChanging" msprop:Generator_RowEvHandlerName="EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="EmployeesRowDeleted" msprop:Generator_RowClassName="EmployeesRow" msprop:Generator_UserTableName="Employees" msprop:Generator_RowEvArgName="EmployeesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EmployeeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeId" msprop:Generator_ColumnPropNameInRow="EmployeeId" msprop:Generator_ColumnPropNameInTable="EmployeeIdColumn" msprop:Generator_UserColumnName="EmployeeId" type="xs:int" />
@@ -808,7 +842,7 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="EmploymentHistory" msprop:Generator_TableClassName="EmploymentHistoryDataTable" msprop:Generator_TableVarName="tableEmploymentHistory" msprop:Generator_TablePropName="EmploymentHistory" msprop:Generator_RowDeletingName="EmploymentHistoryRowDeleting" msprop:Generator_RowChangingName="EmploymentHistoryRowChanging" msprop:Generator_RowEvHandlerName="EmploymentHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="EmploymentHistoryRowDeleted" msprop:Generator_UserTableName="EmploymentHistory" msprop:Generator_RowChangedName="EmploymentHistoryRowChanged" msprop:Generator_RowEvArgName="EmploymentHistoryRowChangeEvent" msprop:Generator_RowClassName="EmploymentHistoryRow">
+        <xs:element name="EmploymentHistory" msprop:Generator_TableClassName="EmploymentHistoryDataTable" msprop:Generator_TableVarName="tableEmploymentHistory" msprop:Generator_RowChangedName="EmploymentHistoryRowChanged" msprop:Generator_TablePropName="EmploymentHistory" msprop:Generator_RowDeletingName="EmploymentHistoryRowDeleting" msprop:Generator_RowChangingName="EmploymentHistoryRowChanging" msprop:Generator_RowEvHandlerName="EmploymentHistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="EmploymentHistoryRowDeleted" msprop:Generator_RowClassName="EmploymentHistoryRow" msprop:Generator_UserTableName="EmploymentHistory" msprop:Generator_RowEvArgName="EmploymentHistoryRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EmploymentHistoryId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmploymentHistoryId" msprop:Generator_ColumnPropNameInRow="EmploymentHistoryId" msprop:Generator_ColumnPropNameInTable="EmploymentHistoryIdColumn" msprop:Generator_UserColumnName="EmploymentHistoryId" type="xs:int" />
@@ -826,7 +860,7 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="EmploymentProfile" msprop:Generator_TableClassName="EmploymentProfileDataTable" msprop:Generator_TableVarName="tableEmploymentProfile" msprop:Generator_TablePropName="EmploymentProfile" msprop:Generator_RowDeletingName="EmploymentProfileRowDeleting" msprop:Generator_RowChangingName="EmploymentProfileRowChanging" msprop:Generator_RowEvHandlerName="EmploymentProfileRowChangeEventHandler" msprop:Generator_RowDeletedName="EmploymentProfileRowDeleted" msprop:Generator_UserTableName="EmploymentProfile" msprop:Generator_RowChangedName="EmploymentProfileRowChanged" msprop:Generator_RowEvArgName="EmploymentProfileRowChangeEvent" msprop:Generator_RowClassName="EmploymentProfileRow">
+        <xs:element name="EmploymentProfile" msprop:Generator_TableClassName="EmploymentProfileDataTable" msprop:Generator_TableVarName="tableEmploymentProfile" msprop:Generator_RowChangedName="EmploymentProfileRowChanged" msprop:Generator_TablePropName="EmploymentProfile" msprop:Generator_RowDeletingName="EmploymentProfileRowDeleting" msprop:Generator_RowChangingName="EmploymentProfileRowChanging" msprop:Generator_RowEvHandlerName="EmploymentProfileRowChangeEventHandler" msprop:Generator_RowDeletedName="EmploymentProfileRowDeleted" msprop:Generator_RowClassName="EmploymentProfileRow" msprop:Generator_UserTableName="EmploymentProfile" msprop:Generator_RowEvArgName="EmploymentProfileRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EmploymentProfileId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmploymentProfileId" msprop:Generator_ColumnPropNameInRow="EmploymentProfileId" msprop:Generator_ColumnPropNameInTable="EmploymentProfileIdColumn" msprop:Generator_UserColumnName="EmploymentProfileId" type="xs:int" />
@@ -856,7 +890,7 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Payroll" msprop:Generator_TableClassName="PayrollDataTable" msprop:Generator_TableVarName="tablePayroll" msprop:Generator_TablePropName="Payroll" msprop:Generator_RowDeletingName="PayrollRowDeleting" msprop:Generator_RowChangingName="PayrollRowChanging" msprop:Generator_RowEvHandlerName="PayrollRowChangeEventHandler" msprop:Generator_RowDeletedName="PayrollRowDeleted" msprop:Generator_UserTableName="Payroll" msprop:Generator_RowChangedName="PayrollRowChanged" msprop:Generator_RowEvArgName="PayrollRowChangeEvent" msprop:Generator_RowClassName="PayrollRow">
+        <xs:element name="Payroll" msprop:Generator_TableClassName="PayrollDataTable" msprop:Generator_TableVarName="tablePayroll" msprop:Generator_RowChangedName="PayrollRowChanged" msprop:Generator_TablePropName="Payroll" msprop:Generator_RowDeletingName="PayrollRowDeleting" msprop:Generator_RowChangingName="PayrollRowChanging" msprop:Generator_RowEvHandlerName="PayrollRowChangeEventHandler" msprop:Generator_RowDeletedName="PayrollRowDeleted" msprop:Generator_RowClassName="PayrollRow" msprop:Generator_UserTableName="Payroll" msprop:Generator_RowEvArgName="PayrollRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PayrollId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPayrollId" msprop:Generator_ColumnPropNameInRow="PayrollId" msprop:Generator_ColumnPropNameInTable="PayrollIdColumn" msprop:Generator_UserColumnName="PayrollId" type="xs:int" />
@@ -875,7 +909,7 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_UserTableName="Users" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_RowEvArgName="UsersRowChangeEvent" msprop:Generator_RowClassName="UsersRow">
+        <xs:element name="Users" msprop:Generator_TableClassName="UsersDataTable" msprop:Generator_TableVarName="tableUsers" msprop:Generator_RowChangedName="UsersRowChanged" msprop:Generator_TablePropName="Users" msprop:Generator_RowDeletingName="UsersRowDeleting" msprop:Generator_RowChangingName="UsersRowChanging" msprop:Generator_RowEvHandlerName="UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="UsersRowDeleted" msprop:Generator_RowClassName="UsersRow" msprop:Generator_UserTableName="Users" msprop:Generator_RowEvArgName="UsersRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" type="xs:int" />
@@ -903,7 +937,7 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="uvwAttendance" msprop:Generator_TableClassName="uvwAttendanceDataTable" msprop:Generator_TableVarName="tableuvwAttendance" msprop:Generator_TablePropName="uvwAttendance" msprop:Generator_RowDeletingName="uvwAttendanceRowDeleting" msprop:Generator_RowChangingName="uvwAttendanceRowChanging" msprop:Generator_RowEvHandlerName="uvwAttendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="uvwAttendanceRowDeleted" msprop:Generator_UserTableName="uvwAttendance" msprop:Generator_RowChangedName="uvwAttendanceRowChanged" msprop:Generator_RowEvArgName="uvwAttendanceRowChangeEvent" msprop:Generator_RowClassName="uvwAttendanceRow">
+        <xs:element name="uvwAttendance" msprop:Generator_TableClassName="uvwAttendanceDataTable" msprop:Generator_TableVarName="tableuvwAttendance" msprop:Generator_RowChangedName="uvwAttendanceRowChanged" msprop:Generator_TablePropName="uvwAttendance" msprop:Generator_RowDeletingName="uvwAttendanceRowDeleting" msprop:Generator_RowChangingName="uvwAttendanceRowChanging" msprop:Generator_RowEvHandlerName="uvwAttendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="uvwAttendanceRowDeleted" msprop:Generator_RowClassName="uvwAttendanceRow" msprop:Generator_UserTableName="uvwAttendance" msprop:Generator_RowEvArgName="uvwAttendanceRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName">
@@ -940,6 +974,39 @@ FROM            dbo.Employees LEFT OUTER JOIN
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="uvwPayroll" msprop:Generator_TableClassName="uvwPayrollDataTable" msprop:Generator_TableVarName="tableuvwPayroll" msprop:Generator_TablePropName="uvwPayroll" msprop:Generator_RowDeletingName="uvwPayrollRowDeleting" msprop:Generator_RowChangingName="uvwPayrollRowChanging" msprop:Generator_RowEvHandlerName="uvwPayrollRowChangeEventHandler" msprop:Generator_RowDeletedName="uvwPayrollRowDeleted" msprop:Generator_UserTableName="uvwPayroll" msprop:Generator_RowChangedName="uvwPayrollRowChanged" msprop:Generator_RowEvArgName="uvwPayrollRowChangeEvent" msprop:Generator_RowClassName="uvwPayrollRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="EmployeeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeId" msprop:Generator_ColumnPropNameInRow="EmployeeId" msprop:Generator_ColumnPropNameInTable="EmployeeIdColumn" msprop:Generator_UserColumnName="EmployeeId" type="xs:int" />
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PayrollId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPayrollId" msprop:Generator_ColumnPropNameInRow="PayrollId" msprop:Generator_ColumnPropNameInTable="PayrollIdColumn" msprop:Generator_UserColumnName="PayrollId" type="xs:int" />
+              <xs:element name="PayPeriodStart" msprop:Generator_ColumnVarNameInTable="columnPayPeriodStart" msprop:Generator_ColumnPropNameInRow="PayPeriodStart" msprop:Generator_ColumnPropNameInTable="PayPeriodStartColumn" msprop:Generator_UserColumnName="PayPeriodStart" type="xs:dateTime" />
+              <xs:element name="PayPeriodEnd" msprop:Generator_ColumnVarNameInTable="columnPayPeriodEnd" msprop:Generator_ColumnPropNameInRow="PayPeriodEnd" msprop:Generator_ColumnPropNameInTable="PayPeriodEndColumn" msprop:Generator_UserColumnName="PayPeriodEnd" type="xs:dateTime" />
+              <xs:element name="DailyRate" msprop:Generator_ColumnVarNameInTable="columnDailyRate" msprop:Generator_ColumnPropNameInRow="DailyRate" msprop:Generator_ColumnPropNameInTable="DailyRateColumn" msprop:Generator_UserColumnName="DailyRate" type="xs:double" />
+              <xs:element name="TotalRegularHoursRendered" msprop:Generator_ColumnVarNameInTable="columnTotalRegularHoursRendered" msprop:Generator_ColumnPropNameInRow="TotalRegularHoursRendered" msprop:Generator_ColumnPropNameInTable="TotalRegularHoursRenderedColumn" msprop:Generator_UserColumnName="TotalRegularHoursRendered" type="xs:double" />
+              <xs:element name="TotalOTHours" msprop:Generator_ColumnVarNameInTable="columnTotalOTHours" msprop:Generator_ColumnPropNameInRow="TotalOTHours" msprop:Generator_ColumnPropNameInTable="TotalOTHoursColumn" msprop:Generator_UserColumnName="TotalOTHours" type="xs:double" />
+              <xs:element name="PremiumSSS" msprop:Generator_ColumnVarNameInTable="columnPremiumSSS" msprop:Generator_ColumnPropNameInRow="PremiumSSS" msprop:Generator_ColumnPropNameInTable="PremiumSSSColumn" msprop:Generator_UserColumnName="PremiumSSS" type="xs:double" />
+              <xs:element name="PremiumPhilHealth" msprop:Generator_ColumnVarNameInTable="columnPremiumPhilHealth" msprop:Generator_ColumnPropNameInRow="PremiumPhilHealth" msprop:Generator_ColumnPropNameInTable="PremiumPhilHealthColumn" msprop:Generator_UserColumnName="PremiumPhilHealth" type="xs:double" />
+              <xs:element name="PremiumPagibig" msprop:Generator_ColumnVarNameInTable="columnPremiumPagibig" msprop:Generator_ColumnPropNameInRow="PremiumPagibig" msprop:Generator_ColumnPropNameInTable="PremiumPagibigColumn" msprop:Generator_UserColumnName="PremiumPagibig" type="xs:double" />
+              <xs:element name="PremiumBirTax" msprop:Generator_ColumnVarNameInTable="columnPremiumBirTax" msprop:Generator_ColumnPropNameInRow="PremiumBirTax" msprop:Generator_ColumnPropNameInTable="PremiumBirTaxColumn" msprop:Generator_UserColumnName="PremiumBirTax" type="xs:double" />
+              <xs:element name="HdmfLoan" msprop:Generator_ColumnVarNameInTable="columnHdmfLoan" msprop:Generator_ColumnPropNameInRow="HdmfLoan" msprop:Generator_ColumnPropNameInTable="HdmfLoanColumn" msprop:Generator_UserColumnName="HdmfLoan" type="xs:double" minOccurs="0" />
+              <xs:element name="SSSLoan" msprop:Generator_ColumnVarNameInTable="columnSSSLoan" msprop:Generator_ColumnPropNameInRow="SSSLoan" msprop:Generator_ColumnPropNameInTable="SSSLoanColumn" msprop:Generator_UserColumnName="SSSLoan" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -973,6 +1040,11 @@ FROM            dbo.Employees LEFT OUTER JOIN
     <xs:unique name="Users_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:Users" />
       <xs:field xpath="mstns:UserId" />
+    </xs:unique>
+    <xs:unique name="uvwPayroll_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:uvwPayroll" />
+      <xs:field xpath="mstns:EmployeeId" />
+      <xs:field xpath="mstns:PayrollId" />
     </xs:unique>
   </xs:element>
 </xs:schema>

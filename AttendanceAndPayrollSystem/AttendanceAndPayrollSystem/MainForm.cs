@@ -1,4 +1,5 @@
 ﻿using AttendanceAndPayrollSystem.Database;
+using AttendanceAndPayrollSystem.Payroll;
 using AttendanceAndPayrollSystem.Registration;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,16 @@ namespace AttendanceAndPayrollSystem
             InitializeComponent();
 
             tabMain.DrawItem += TabMain_DrawItem;
+            tabMain.SelectedIndexChanged += TabMain_SelectedIndexChanged;
+        }
+
+        private void TabMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             // LOAD GRID
+            if (((TabControl)sender).SelectedIndex == 1)
+                this.employeesTableAdapter.Fill(this.apsDataSet.Employees);
+            else if (((TabControl)sender).SelectedIndex == 2)
+                this.uvwAttendanceTableAdapter.Fill(this.apsDataSet.uvwAttendance);
         }
 
         private void TabMain_DrawItem(object sender, DrawItemEventArgs e)
@@ -68,17 +79,31 @@ namespace AttendanceAndPayrollSystem
             }
         }
 
-        private void tabMain_MouseClick(object sender, MouseEventArgs e)
+        private void btnEmpAttendance_Click(object sender, EventArgs e)
         {
-            // LOAD GRID
-            if (((TabControl)sender).SelectedIndex == 1)
+            tabMain.SelectedIndex = 2;
+        }
+
+        private void btnNewEmployee_Click(object sender, EventArgs e)
+        {
+            using (var registrationForm = new RegistrationForm())
+            {
+                registrationForm.ShowDialog();
                 this.employeesTableAdapter.Fill(this.apsDataSet.Employees);
-            else if (((TabControl)sender).SelectedIndex == 2)
-                this.uvwAttendanceTableAdapter.Fill(this.apsDataSet.uvwAttendance);
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'apsDataSet.uvwPayroll' table. You can move, or remove it, as needed.
+            this.uvwPayrollTableAdapter.Fill(this.apsDataSet.uvwPayroll);
+
+        }
+
+        private void btnGeneratePayroll_Click(object sender, EventArgs e)
+        {
+            Payroll.PayrollForm p = new PayrollForm();
+            p.Show();
         }
     }
 }

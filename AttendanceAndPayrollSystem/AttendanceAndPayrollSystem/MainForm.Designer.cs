@@ -30,11 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabMain = new System.Windows.Forms.TabControl();
+            this.btn = new System.Windows.Forms.TabPage();
+            this.btnEmpAttendance = new System.Windows.Forms.Button();
+            this.btnRegistration = new System.Windows.Forms.Button();
             this.tabEmployee = new System.Windows.Forms.TabPage();
             this.gridEmployees = new System.Windows.Forms.DataGridView();
+            this.tabAttendance = new System.Windows.Forms.TabPage();
+            this.gridAttendance = new System.Windows.Forms.DataGridView();
+            this.btnNewEmployee = new System.Windows.Forms.Button();
+            this.tabPayroll = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,8 +56,6 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apsDataSet = new AttendanceAndPayrollSystem.apsDataSet();
-            this.tabAttendance = new System.Windows.Forms.TabPage();
-            this.gridAttendance = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,37 +66,49 @@
             this.uvwAttendanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.employeesTableAdapter = new AttendanceAndPayrollSystem.apsDataSetTableAdapters.EmployeesTableAdapter();
             this.uvwAttendanceTableAdapter = new AttendanceAndPayrollSystem.apsDataSetTableAdapters.uvwAttendanceTableAdapter();
-            this.tabHome = new System.Windows.Forms.TabPage();
-            this.btnRegistration = new System.Windows.Forms.Button();
+            this.uvwPayrollBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uvwPayrollTableAdapter = new AttendanceAndPayrollSystem.apsDataSetTableAdapters.uvwPayrollTableAdapter();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payrollIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payPeriodStartDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.payPeriodEndDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dailyRateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalRegularHoursRenderedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalOTHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.premiumSSSDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.premiumPhilHealthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.premiumPagibigDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.premiumBirTaxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hdmfLoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSSLoanDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGeneratePayroll = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.tabMain.SuspendLayout();
+            this.btn.SuspendLayout();
             this.tabEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployees)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).BeginInit();
             this.tabAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendance)).BeginInit();
+            this.tabPayroll.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvwAttendanceBindingSource)).BeginInit();
-            this.tabHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.uvwPayrollBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1341, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.aboutToolStripMenuItem.Text = "&About";
             // 
             // exitToolStripMenuItem
             // 
@@ -103,9 +120,10 @@
             // tabMain
             // 
             this.tabMain.Alignment = System.Windows.Forms.TabAlignment.Left;
-            this.tabMain.Controls.Add(this.tabHome);
+            this.tabMain.Controls.Add(this.btn);
             this.tabMain.Controls.Add(this.tabEmployee);
             this.tabMain.Controls.Add(this.tabAttendance);
+            this.tabMain.Controls.Add(this.tabPayroll);
             this.tabMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabMain.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabMain.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,10 +135,52 @@
             this.tabMain.Size = new System.Drawing.Size(1341, 781);
             this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabMain.TabIndex = 1;
-            this.tabMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabMain_MouseClick);
+            // 
+            // btn
+            // 
+            this.btn.BackgroundImage = global::AttendanceAndPayrollSystem.Properties.Resources.cakes;
+            this.btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn.Controls.Add(this.btnEmpAttendance);
+            this.btn.Controls.Add(this.btnRegistration);
+            this.btn.Location = new System.Drawing.Point(204, 4);
+            this.btn.Name = "btn";
+            this.btn.Size = new System.Drawing.Size(1133, 773);
+            this.btn.TabIndex = 2;
+            this.btn.Text = "H O M E";
+            this.btn.UseVisualStyleBackColor = true;
+            // 
+            // btnEmpAttendance
+            // 
+            this.btnEmpAttendance.BackColor = System.Drawing.Color.White;
+            this.btnEmpAttendance.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnEmpAttendance.Image = global::AttendanceAndPayrollSystem.Properties.Resources.clock;
+            this.btnEmpAttendance.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnEmpAttendance.Location = new System.Drawing.Point(869, 254);
+            this.btnEmpAttendance.Name = "btnEmpAttendance";
+            this.btnEmpAttendance.Size = new System.Drawing.Size(187, 149);
+            this.btnEmpAttendance.TabIndex = 1;
+            this.btnEmpAttendance.Text = "Employee Attendance";
+            this.btnEmpAttendance.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnEmpAttendance.UseVisualStyleBackColor = false;
+            this.btnEmpAttendance.Click += new System.EventHandler(this.btnEmpAttendance_Click);
+            // 
+            // btnRegistration
+            // 
+            this.btnRegistration.BackColor = System.Drawing.Color.Transparent;
+            this.btnRegistration.BackgroundImage = global::AttendanceAndPayrollSystem.Properties.Resources.people;
+            this.btnRegistration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnRegistration.Location = new System.Drawing.Point(869, 91);
+            this.btnRegistration.Name = "btnRegistration";
+            this.btnRegistration.Size = new System.Drawing.Size(187, 149);
+            this.btnRegistration.TabIndex = 0;
+            this.btnRegistration.Text = "Employee Registration";
+            this.btnRegistration.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRegistration.UseVisualStyleBackColor = false;
+            this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click);
             // 
             // tabEmployee
             // 
+            this.tabEmployee.Controls.Add(this.btnNewEmployee);
             this.tabEmployee.Controls.Add(this.gridEmployees);
             this.tabEmployee.Location = new System.Drawing.Point(204, 4);
             this.tabEmployee.Name = "tabEmployee";
@@ -154,6 +214,87 @@
             this.gridEmployees.Name = "gridEmployees";
             this.gridEmployees.Size = new System.Drawing.Size(1127, 696);
             this.gridEmployees.TabIndex = 0;
+            // 
+            // tabAttendance
+            // 
+            this.tabAttendance.Controls.Add(this.gridAttendance);
+            this.tabAttendance.Location = new System.Drawing.Point(204, 4);
+            this.tabAttendance.Name = "tabAttendance";
+            this.tabAttendance.Padding = new System.Windows.Forms.Padding(3);
+            this.tabAttendance.Size = new System.Drawing.Size(1133, 773);
+            this.tabAttendance.TabIndex = 1;
+            this.tabAttendance.Text = "Attendance";
+            this.tabAttendance.UseVisualStyleBackColor = true;
+            // 
+            // gridAttendance
+            // 
+            this.gridAttendance.AutoGenerateColumns = false;
+            this.gridAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAttendance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dateTimeInDataGridViewTextBoxColumn,
+            this.dateTimeOutDataGridViewTextBoxColumn,
+            this.regularHoursRenderedDataGridViewTextBoxColumn,
+            this.oTHoursRenderedDataGridViewTextBoxColumn});
+            this.gridAttendance.DataSource = this.uvwAttendanceBindingSource;
+            this.gridAttendance.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridAttendance.Location = new System.Drawing.Point(3, 75);
+            this.gridAttendance.Margin = new System.Windows.Forms.Padding(2);
+            this.gridAttendance.Name = "gridAttendance";
+            this.gridAttendance.RowHeadersWidth = 40;
+            this.gridAttendance.RowTemplate.Height = 24;
+            this.gridAttendance.Size = new System.Drawing.Size(1127, 695);
+            this.gridAttendance.TabIndex = 0;
+            // 
+            // btnNewEmployee
+            // 
+            this.btnNewEmployee.Location = new System.Drawing.Point(981, 34);
+            this.btnNewEmployee.Name = "btnNewEmployee";
+            this.btnNewEmployee.Size = new System.Drawing.Size(144, 34);
+            this.btnNewEmployee.TabIndex = 1;
+            this.btnNewEmployee.Text = "New Employee";
+            this.btnNewEmployee.UseVisualStyleBackColor = true;
+            this.btnNewEmployee.Click += new System.EventHandler(this.btnNewEmployee_Click);
+            // 
+            // tabPayroll
+            // 
+            this.tabPayroll.Controls.Add(this.btnGeneratePayroll);
+            this.tabPayroll.Controls.Add(this.dataGridView1);
+            this.tabPayroll.Location = new System.Drawing.Point(204, 4);
+            this.tabPayroll.Name = "tabPayroll";
+            this.tabPayroll.Size = new System.Drawing.Size(1133, 773);
+            this.tabPayroll.TabIndex = 3;
+            this.tabPayroll.Text = "Payroll";
+            this.tabPayroll.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.payrollIdDataGridViewTextBoxColumn,
+            this.payPeriodStartDataGridViewTextBoxColumn,
+            this.payPeriodEndDataGridViewTextBoxColumn,
+            this.dailyRateDataGridViewTextBoxColumn,
+            this.totalRegularHoursRenderedDataGridViewTextBoxColumn,
+            this.totalOTHoursDataGridViewTextBoxColumn,
+            this.premiumSSSDataGridViewTextBoxColumn,
+            this.premiumPhilHealthDataGridViewTextBoxColumn,
+            this.premiumPagibigDataGridViewTextBoxColumn,
+            this.premiumBirTaxDataGridViewTextBoxColumn,
+            this.hdmfLoanDataGridViewTextBoxColumn,
+            this.sSSLoanDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.uvwPayrollBindingSource;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 77);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(1133, 696);
+            this.dataGridView1.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -238,38 +379,6 @@
             this.apsDataSet.DataSetName = "apsDataSet";
             this.apsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tabAttendance
-            // 
-            this.tabAttendance.Controls.Add(this.gridAttendance);
-            this.tabAttendance.Location = new System.Drawing.Point(204, 4);
-            this.tabAttendance.Name = "tabAttendance";
-            this.tabAttendance.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAttendance.Size = new System.Drawing.Size(1133, 773);
-            this.tabAttendance.TabIndex = 1;
-            this.tabAttendance.Text = "Attendance";
-            this.tabAttendance.UseVisualStyleBackColor = true;
-            // 
-            // gridAttendance
-            // 
-            this.gridAttendance.AutoGenerateColumns = false;
-            this.gridAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridAttendance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15,
-            this.dateTimeInDataGridViewTextBoxColumn,
-            this.dateTimeOutDataGridViewTextBoxColumn,
-            this.regularHoursRenderedDataGridViewTextBoxColumn,
-            this.oTHoursRenderedDataGridViewTextBoxColumn});
-            this.gridAttendance.DataSource = this.uvwAttendanceBindingSource;
-            this.gridAttendance.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gridAttendance.Location = new System.Drawing.Point(3, 75);
-            this.gridAttendance.Margin = new System.Windows.Forms.Padding(2);
-            this.gridAttendance.Name = "gridAttendance";
-            this.gridAttendance.RowTemplate.Height = 24;
-            this.gridAttendance.Size = new System.Drawing.Size(1127, 695);
-            this.gridAttendance.TabIndex = 0;
-            // 
             // dataGridViewTextBoxColumn13
             // 
             this.dataGridViewTextBoxColumn13.DataPropertyName = "LastName";
@@ -325,31 +434,116 @@
             // 
             this.uvwAttendanceTableAdapter.ClearBeforeFill = true;
             // 
-            // tabHome
+            // uvwPayrollBindingSource
             // 
-            this.tabHome.BackgroundImage = global::AttendanceAndPayrollSystem.Properties.Resources.cakes;
-            this.tabHome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tabHome.Controls.Add(this.btnRegistration);
-            this.tabHome.Location = new System.Drawing.Point(204, 4);
-            this.tabHome.Name = "tabHome";
-            this.tabHome.Size = new System.Drawing.Size(1133, 773);
-            this.tabHome.TabIndex = 2;
-            this.tabHome.Text = "H O M E";
-            this.tabHome.UseVisualStyleBackColor = true;
+            this.uvwPayrollBindingSource.DataMember = "uvwPayroll";
+            this.uvwPayrollBindingSource.DataSource = this.apsDataSet;
             // 
-            // btnRegistration
+            // uvwPayrollTableAdapter
             // 
-            this.btnRegistration.BackColor = System.Drawing.Color.Transparent;
-            this.btnRegistration.BackgroundImage = global::AttendanceAndPayrollSystem.Properties.Resources.people;
-            this.btnRegistration.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnRegistration.Location = new System.Drawing.Point(181, 145);
-            this.btnRegistration.Name = "btnRegistration";
-            this.btnRegistration.Size = new System.Drawing.Size(131, 110);
-            this.btnRegistration.TabIndex = 0;
-            this.btnRegistration.Text = "Registration";
-            this.btnRegistration.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnRegistration.UseVisualStyleBackColor = false;
-            this.btnRegistration.Click += new System.EventHandler(this.btnRegistration_Click);
+            this.uvwPayrollTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "EmployeeId";
+            this.dataGridViewTextBoxColumn16.HeaderText = "EmployeeId";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.dataGridViewTextBoxColumn16.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn17
+            // 
+            this.dataGridViewTextBoxColumn17.DataPropertyName = "LastName";
+            this.dataGridViewTextBoxColumn17.HeaderText = "LastName";
+            this.dataGridViewTextBoxColumn17.Name = "dataGridViewTextBoxColumn17";
+            // 
+            // dataGridViewTextBoxColumn18
+            // 
+            this.dataGridViewTextBoxColumn18.DataPropertyName = "FirstName";
+            this.dataGridViewTextBoxColumn18.HeaderText = "FirstName";
+            this.dataGridViewTextBoxColumn18.Name = "dataGridViewTextBoxColumn18";
+            // 
+            // payrollIdDataGridViewTextBoxColumn
+            // 
+            this.payrollIdDataGridViewTextBoxColumn.DataPropertyName = "PayrollId";
+            this.payrollIdDataGridViewTextBoxColumn.HeaderText = "PayrollId";
+            this.payrollIdDataGridViewTextBoxColumn.Name = "payrollIdDataGridViewTextBoxColumn";
+            this.payrollIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // payPeriodStartDataGridViewTextBoxColumn
+            // 
+            this.payPeriodStartDataGridViewTextBoxColumn.DataPropertyName = "PayPeriodStart";
+            this.payPeriodStartDataGridViewTextBoxColumn.HeaderText = "PayPeriodStart";
+            this.payPeriodStartDataGridViewTextBoxColumn.Name = "payPeriodStartDataGridViewTextBoxColumn";
+            // 
+            // payPeriodEndDataGridViewTextBoxColumn
+            // 
+            this.payPeriodEndDataGridViewTextBoxColumn.DataPropertyName = "PayPeriodEnd";
+            this.payPeriodEndDataGridViewTextBoxColumn.HeaderText = "PayPeriodEnd";
+            this.payPeriodEndDataGridViewTextBoxColumn.Name = "payPeriodEndDataGridViewTextBoxColumn";
+            // 
+            // dailyRateDataGridViewTextBoxColumn
+            // 
+            this.dailyRateDataGridViewTextBoxColumn.DataPropertyName = "DailyRate";
+            this.dailyRateDataGridViewTextBoxColumn.HeaderText = "DailyRate";
+            this.dailyRateDataGridViewTextBoxColumn.Name = "dailyRateDataGridViewTextBoxColumn";
+            // 
+            // totalRegularHoursRenderedDataGridViewTextBoxColumn
+            // 
+            this.totalRegularHoursRenderedDataGridViewTextBoxColumn.DataPropertyName = "TotalRegularHoursRendered";
+            this.totalRegularHoursRenderedDataGridViewTextBoxColumn.HeaderText = "TotalRegularHoursRendered";
+            this.totalRegularHoursRenderedDataGridViewTextBoxColumn.Name = "totalRegularHoursRenderedDataGridViewTextBoxColumn";
+            // 
+            // totalOTHoursDataGridViewTextBoxColumn
+            // 
+            this.totalOTHoursDataGridViewTextBoxColumn.DataPropertyName = "TotalOTHours";
+            this.totalOTHoursDataGridViewTextBoxColumn.HeaderText = "TotalOTHours";
+            this.totalOTHoursDataGridViewTextBoxColumn.Name = "totalOTHoursDataGridViewTextBoxColumn";
+            // 
+            // premiumSSSDataGridViewTextBoxColumn
+            // 
+            this.premiumSSSDataGridViewTextBoxColumn.DataPropertyName = "PremiumSSS";
+            this.premiumSSSDataGridViewTextBoxColumn.HeaderText = "PremiumSSS";
+            this.premiumSSSDataGridViewTextBoxColumn.Name = "premiumSSSDataGridViewTextBoxColumn";
+            // 
+            // premiumPhilHealthDataGridViewTextBoxColumn
+            // 
+            this.premiumPhilHealthDataGridViewTextBoxColumn.DataPropertyName = "PremiumPhilHealth";
+            this.premiumPhilHealthDataGridViewTextBoxColumn.HeaderText = "PremiumPhilHealth";
+            this.premiumPhilHealthDataGridViewTextBoxColumn.Name = "premiumPhilHealthDataGridViewTextBoxColumn";
+            // 
+            // premiumPagibigDataGridViewTextBoxColumn
+            // 
+            this.premiumPagibigDataGridViewTextBoxColumn.DataPropertyName = "PremiumPagibig";
+            this.premiumPagibigDataGridViewTextBoxColumn.HeaderText = "PremiumPagibig";
+            this.premiumPagibigDataGridViewTextBoxColumn.Name = "premiumPagibigDataGridViewTextBoxColumn";
+            // 
+            // premiumBirTaxDataGridViewTextBoxColumn
+            // 
+            this.premiumBirTaxDataGridViewTextBoxColumn.DataPropertyName = "PremiumBirTax";
+            this.premiumBirTaxDataGridViewTextBoxColumn.HeaderText = "PremiumBirTax";
+            this.premiumBirTaxDataGridViewTextBoxColumn.Name = "premiumBirTaxDataGridViewTextBoxColumn";
+            // 
+            // hdmfLoanDataGridViewTextBoxColumn
+            // 
+            this.hdmfLoanDataGridViewTextBoxColumn.DataPropertyName = "HdmfLoan";
+            this.hdmfLoanDataGridViewTextBoxColumn.HeaderText = "HdmfLoan";
+            this.hdmfLoanDataGridViewTextBoxColumn.Name = "hdmfLoanDataGridViewTextBoxColumn";
+            // 
+            // sSSLoanDataGridViewTextBoxColumn
+            // 
+            this.sSSLoanDataGridViewTextBoxColumn.DataPropertyName = "SSSLoan";
+            this.sSSLoanDataGridViewTextBoxColumn.HeaderText = "SSSLoan";
+            this.sSSLoanDataGridViewTextBoxColumn.Name = "sSSLoanDataGridViewTextBoxColumn";
+            // 
+            // btnGeneratePayroll
+            // 
+            this.btnGeneratePayroll.Location = new System.Drawing.Point(981, 37);
+            this.btnGeneratePayroll.Name = "btnGeneratePayroll";
+            this.btnGeneratePayroll.Size = new System.Drawing.Size(144, 34);
+            this.btnGeneratePayroll.TabIndex = 2;
+            this.btnGeneratePayroll.Text = "Generate Payroll";
+            this.btnGeneratePayroll.UseVisualStyleBackColor = true;
+            this.btnGeneratePayroll.Click += new System.EventHandler(this.btnGeneratePayroll_Click);
             // 
             // MainForm
             // 
@@ -368,14 +562,17 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.tabMain.ResumeLayout(false);
+            this.btn.ResumeLayout(false);
             this.tabEmployee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).EndInit();
             this.tabAttendance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridAttendance)).EndInit();
+            this.tabPayroll.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uvwAttendanceBindingSource)).EndInit();
-            this.tabHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.uvwPayrollBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -384,12 +581,11 @@
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.TabControl tabMain;
         private System.Windows.Forms.TabPage tabEmployee;
         private System.Windows.Forms.TabPage tabAttendance;
-        private System.Windows.Forms.TabPage tabHome;
+        private System.Windows.Forms.TabPage btn;
         private System.Windows.Forms.Button btnRegistration;
         private System.Windows.Forms.DataGridView gridEmployees;
         private System.Windows.Forms.DataGridView gridAttendance;
@@ -429,6 +625,28 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeOutDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn regularHoursRenderedDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn oTHoursRenderedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnEmpAttendance;
+        private System.Windows.Forms.Button btnNewEmployee;
+        private System.Windows.Forms.TabPage tabPayroll;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource uvwPayrollBindingSource;
+        private apsDataSetTableAdapters.uvwPayrollTableAdapter uvwPayrollTableAdapter;
+        private System.Windows.Forms.Button btnGeneratePayroll;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payrollIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payPeriodStartDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn payPeriodEndDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dailyRateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalRegularHoursRenderedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalOTHoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn premiumSSSDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn premiumPhilHealthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn premiumPagibigDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn premiumBirTaxDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hdmfLoanDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sSSLoanDataGridViewTextBoxColumn;
     }
 }
 
