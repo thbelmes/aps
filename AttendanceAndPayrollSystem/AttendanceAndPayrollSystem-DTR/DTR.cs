@@ -156,9 +156,6 @@ namespace AttendanceAndPayrollSystem_DTR
                 {
                     MessageBox.Show("You have timed in", "APS", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Reset();
-                    MainForm a = new MainForm();
-                    a.Show();
-
                     return;
                 }
             }
