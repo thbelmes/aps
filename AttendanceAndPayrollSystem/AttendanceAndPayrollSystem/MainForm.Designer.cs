@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,12 +39,8 @@
             this.btnRegistration = new System.Windows.Forms.Button();
             this.tabEmployee = new System.Windows.Forms.TabPage();
             this.gridEmployees = new System.Windows.Forms.DataGridView();
-            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabAttendance = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.apsDataSet = new AttendanceAndPayrollSystem.apsDataSet();
-            this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.employeesTableAdapter = new AttendanceAndPayrollSystem.apsDataSetTableAdapters.EmployeesTableAdapter();
+            this.gridAttendance = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,16 +53,28 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.apsDataSet = new AttendanceAndPayrollSystem.apsDataSet();
+            this.employeesTableAdapter = new AttendanceAndPayrollSystem.apsDataSetTableAdapters.EmployeesTableAdapter();
+            this.uvwAttendanceBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uvwAttendanceTableAdapter = new AttendanceAndPayrollSystem.apsDataSetTableAdapters.uvwAttendanceTableAdapter();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeInDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateTimeOutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.regularHoursRenderedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.oTHoursRenderedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.tabEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployees)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             this.tabAttendance.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAttendance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvwAttendanceBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -160,7 +169,7 @@
             this.dataGridViewTextBoxColumn10,
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
-            this.gridEmployees.DataSource = this.employeesBindingSource1;
+            this.gridEmployees.DataSource = this.employeesBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -176,13 +185,9 @@
             this.gridEmployees.Size = new System.Drawing.Size(1127, 689);
             this.gridEmployees.TabIndex = 0;
             // 
-            // employeesBindingSource
-            // 
-            this.employeesBindingSource.DataMember = "Employees";
-            // 
             // tabAttendance
             // 
-            this.tabAttendance.Controls.Add(this.dataGridView1);
+            this.tabAttendance.Controls.Add(this.gridAttendance);
             this.tabAttendance.Location = new System.Drawing.Point(204, 4);
             this.tabAttendance.Name = "tabAttendance";
             this.tabAttendance.Padding = new System.Windows.Forms.Padding(3);
@@ -191,30 +196,34 @@
             this.tabAttendance.Text = "Attendance";
             this.tabAttendance.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // gridAttendance
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 74);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1127, 696);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // apsDataSet
-            // 
-            this.apsDataSet.DataSetName = "apsDataSet";
-            this.apsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeesBindingSource1
-            // 
-            this.employeesBindingSource1.DataMember = "Employees";
-            this.employeesBindingSource1.DataSource = this.apsDataSet;
-            // 
-            // employeesTableAdapter
-            // 
-            this.employeesTableAdapter.ClearBeforeFill = true;
+            this.gridAttendance.AutoGenerateColumns = false;
+            this.gridAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gridAttendance.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15,
+            this.dateTimeInDataGridViewTextBoxColumn,
+            this.dateTimeOutDataGridViewTextBoxColumn,
+            this.regularHoursRenderedDataGridViewTextBoxColumn,
+            this.oTHoursRenderedDataGridViewTextBoxColumn});
+            this.gridAttendance.DataSource = this.uvwAttendanceBindingSource;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.gridAttendance.DefaultCellStyle = dataGridViewCellStyle2;
+            this.gridAttendance.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gridAttendance.Location = new System.Drawing.Point(3, 74);
+            this.gridAttendance.Margin = new System.Windows.Forms.Padding(2);
+            this.gridAttendance.Name = "gridAttendance";
+            this.gridAttendance.RowTemplate.Height = 24;
+            this.gridAttendance.Size = new System.Drawing.Size(1127, 696);
+            this.gridAttendance.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -289,6 +298,71 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "CivilStatus";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
+            // employeesBindingSource
+            // 
+            this.employeesBindingSource.DataMember = "Employees";
+            this.employeesBindingSource.DataSource = this.apsDataSet;
+            // 
+            // apsDataSet
+            // 
+            this.apsDataSet.DataSetName = "apsDataSet";
+            this.apsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // employeesTableAdapter
+            // 
+            this.employeesTableAdapter.ClearBeforeFill = true;
+            // 
+            // uvwAttendanceBindingSource
+            // 
+            this.uvwAttendanceBindingSource.DataMember = "uvwAttendance";
+            this.uvwAttendanceBindingSource.DataSource = this.apsDataSet;
+            // 
+            // uvwAttendanceTableAdapter
+            // 
+            this.uvwAttendanceTableAdapter.ClearBeforeFill = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "LastName";
+            this.dataGridViewTextBoxColumn13.HeaderText = "LastName";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "FirstName";
+            this.dataGridViewTextBoxColumn14.HeaderText = "FirstName";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "MiddleName";
+            this.dataGridViewTextBoxColumn15.HeaderText = "MiddleName";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // dateTimeInDataGridViewTextBoxColumn
+            // 
+            this.dateTimeInDataGridViewTextBoxColumn.DataPropertyName = "DateTimeIn";
+            this.dateTimeInDataGridViewTextBoxColumn.HeaderText = "DateTimeIn";
+            this.dateTimeInDataGridViewTextBoxColumn.Name = "dateTimeInDataGridViewTextBoxColumn";
+            // 
+            // dateTimeOutDataGridViewTextBoxColumn
+            // 
+            this.dateTimeOutDataGridViewTextBoxColumn.DataPropertyName = "DateTimeOut";
+            this.dateTimeOutDataGridViewTextBoxColumn.HeaderText = "DateTimeOut";
+            this.dateTimeOutDataGridViewTextBoxColumn.Name = "dateTimeOutDataGridViewTextBoxColumn";
+            // 
+            // regularHoursRenderedDataGridViewTextBoxColumn
+            // 
+            this.regularHoursRenderedDataGridViewTextBoxColumn.DataPropertyName = "RegularHoursRendered";
+            this.regularHoursRenderedDataGridViewTextBoxColumn.HeaderText = "RegularHoursRendered";
+            this.regularHoursRenderedDataGridViewTextBoxColumn.Name = "regularHoursRenderedDataGridViewTextBoxColumn";
+            // 
+            // oTHoursRenderedDataGridViewTextBoxColumn
+            // 
+            this.oTHoursRenderedDataGridViewTextBoxColumn.DataPropertyName = "OTHoursRendered";
+            this.oTHoursRenderedDataGridViewTextBoxColumn.HeaderText = "OTHoursRendered";
+            this.oTHoursRenderedDataGridViewTextBoxColumn.Name = "oTHoursRenderedDataGridViewTextBoxColumn";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,11 +383,11 @@
             this.tabHome.ResumeLayout(false);
             this.tabEmployee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             this.tabAttendance.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridAttendance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uvwAttendanceBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -330,8 +404,7 @@
         private System.Windows.Forms.TabPage tabHome;
         private System.Windows.Forms.Button btnRegistration;
         private System.Windows.Forms.DataGridView gridEmployees;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.BindingSource employeesBindingSource;
+        private System.Windows.Forms.DataGridView gridAttendance;
         private System.Windows.Forms.DataGridViewTextBoxColumn employeeIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
@@ -345,7 +418,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn religionDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn civilStatusDataGridViewTextBoxColumn;
         private apsDataSet apsDataSet;
-        private System.Windows.Forms.BindingSource employeesBindingSource1;
+        private System.Windows.Forms.BindingSource employeesBindingSource;
         private apsDataSetTableAdapters.EmployeesTableAdapter employeesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -359,6 +432,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.BindingSource uvwAttendanceBindingSource;
+        private apsDataSetTableAdapters.uvwAttendanceTableAdapter uvwAttendanceTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeInDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dateTimeOutDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn regularHoursRenderedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn oTHoursRenderedDataGridViewTextBoxColumn;
     }
 }
 

@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="Database\Db.cs" />
     <Compile Include="Database\EmployeeRepository.cs" />
+    <Compile Include="Database\Models\EducationalAttainmentModel.cs" />
     <Compile Include="Database\Models\EmployeeModel.cs" />
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>

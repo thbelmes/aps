@@ -50,12 +50,27 @@ namespace AttendanceAndPayrollSystem.Database
                         var id = DatabaseHelper.ExecuteScalar<int>(sqlTransaction, CommandType.Text, insertSql);
 
                         // INSERT TO ED ATTAINMENT
+                        // sql insert template
+                        sql = "INSERT INTO EducationalAttainments(EmployeeId, SchoolAttended, YearGraduated, Qualification)" +
+                           $"VALUES (@empId, @schoolAttended, @yearGrad, @qualification) {SelectScopeIdentitySql()}";
 
+                        foreach (var item in model.EducationalAttainments)
+                        {
+                            // generates an insert sql statement with the parameters
+                            insertSql = SqlDebugHelper.CreateExecutableSqlStatement(sql, CommandType.Text,
+                                                new List<SqlParameter> {
+                                                    new SqlParameter("empId", id),
+                                                    new SqlParameter("schoolAttended", item.SchoolAttended),
+                                                    new SqlParameter("yearGrad", item.YearGraduated),
+                                                    new SqlParameter("qualification", item.Qualification)
+                                            });
+
+                            DatabaseHelper.ExecuteScalar<int>(sqlTransaction, CommandType.Text, insertSql);
+                        }
 
                         sqlTransaction.Commit();
 
                         return id;
-
                     }
                 }
             }

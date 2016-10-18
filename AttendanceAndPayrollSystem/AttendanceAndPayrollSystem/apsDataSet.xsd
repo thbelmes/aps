@@ -632,6 +632,31 @@ SELECT UserId, Username, Password, UserType FROM Users WHERE (UserId = @UserId)<
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="uvwAttendanceTableAdapter" GeneratorDataComponentClassName="uvwAttendanceTableAdapter" Name="uvwAttendance" UserDataComponentName="uvwAttendanceTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="apsConnectionString (Settings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        dbo.Employees.LastName, dbo.Employees.FirstName, dbo.Employees.MiddleName, dbo.Attendance.DateTimeIn, dbo.Attendance.DateTimeOut, dbo.Attendance.RegularHoursRendered, 
+                         dbo.Attendance.OTHoursRendered
+FROM            dbo.Employees LEFT OUTER JOIN
+                         dbo.Attendance ON dbo.Employees.EmployeeId = dbo.Attendance.EmployeeId</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+              <Mapping SourceColumn="MiddleName" DataSetColumn="MiddleName" />
+              <Mapping SourceColumn="DateTimeIn" DataSetColumn="DateTimeIn" />
+              <Mapping SourceColumn="DateTimeOut" DataSetColumn="DateTimeOut" />
+              <Mapping SourceColumn="RegularHoursRendered" DataSetColumn="RegularHoursRendered" />
+              <Mapping SourceColumn="OTHoursRendered" DataSetColumn="OTHoursRendered" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -869,6 +894,43 @@ SELECT UserId, Username, Password, UserType FROM Users WHERE (UserId = @UserId)<
                 </xs:simpleType>
               </xs:element>
               <xs:element name="UserType" msprop:Generator_ColumnVarNameInTable="columnUserType" msprop:Generator_ColumnPropNameInRow="UserType" msprop:Generator_ColumnPropNameInTable="UserTypeColumn" msprop:Generator_UserColumnName="UserType">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="uvwAttendance" msprop:Generator_TableClassName="uvwAttendanceDataTable" msprop:Generator_TableVarName="tableuvwAttendance" msprop:Generator_TablePropName="uvwAttendance" msprop:Generator_RowDeletingName="uvwAttendanceRowDeleting" msprop:Generator_RowChangingName="uvwAttendanceRowChanging" msprop:Generator_RowEvHandlerName="uvwAttendanceRowChangeEventHandler" msprop:Generator_RowDeletedName="uvwAttendanceRowDeleted" msprop:Generator_UserTableName="uvwAttendance" msprop:Generator_RowChangedName="uvwAttendanceRowChanged" msprop:Generator_RowEvArgName="uvwAttendanceRowChangeEvent" msprop:Generator_RowClassName="uvwAttendanceRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="MiddleName" msprop:Generator_ColumnVarNameInTable="columnMiddleName" msprop:Generator_ColumnPropNameInRow="MiddleName" msprop:Generator_ColumnPropNameInTable="MiddleNameColumn" msprop:Generator_UserColumnName="MiddleName">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateTimeIn" msprop:Generator_ColumnVarNameInTable="columnDateTimeIn" msprop:Generator_ColumnPropNameInRow="DateTimeIn" msprop:Generator_ColumnPropNameInTable="DateTimeInColumn" msprop:Generator_UserColumnName="DateTimeIn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="DateTimeOut" msprop:Generator_ColumnVarNameInTable="columnDateTimeOut" msprop:Generator_ColumnPropNameInRow="DateTimeOut" msprop:Generator_ColumnPropNameInTable="DateTimeOutColumn" msprop:Generator_UserColumnName="DateTimeOut" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="RegularHoursRendered" msprop:Generator_ColumnVarNameInTable="columnRegularHoursRendered" msprop:Generator_ColumnPropNameInRow="RegularHoursRendered" msprop:Generator_ColumnPropNameInTable="RegularHoursRenderedColumn" msprop:Generator_UserColumnName="RegularHoursRendered" type="xs:double" minOccurs="0" />
+              <xs:element name="OTHoursRendered" msprop:Generator_ColumnVarNameInTable="columnOTHoursRendered" msprop:Generator_ColumnPropNameInRow="OTHoursRendered" msprop:Generator_ColumnPropNameInTable="OTHoursRenderedColumn" msprop:Generator_UserColumnName="OTHoursRendered" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />

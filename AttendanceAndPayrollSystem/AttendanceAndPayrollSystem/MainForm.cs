@@ -71,14 +71,14 @@ namespace AttendanceAndPayrollSystem
         private void tabMain_MouseClick(object sender, MouseEventArgs e)
         {
             // LOAD GRID
-            //var employee = new Employee();
-            //gridEmployees.DataSource = employee.Read();
+            if (((TabControl)sender).SelectedIndex == 1)
+                this.employeesTableAdapter.Fill(this.apsDataSet.Employees);
+            else if (((TabControl)sender).SelectedIndex == 2)
+                this.uvwAttendanceTableAdapter.Fill(this.apsDataSet.uvwAttendance);
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'apsDataSet.Employees' table. You can move, or remove it, as needed.
-            this.employeesTableAdapter.Fill(this.apsDataSet.Employees);
         }
     }
 }

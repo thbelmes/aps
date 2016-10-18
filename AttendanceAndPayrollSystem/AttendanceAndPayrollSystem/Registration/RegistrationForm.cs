@@ -23,6 +23,9 @@ namespace AttendanceAndPayrollSystem.Registration
         {
             cboCivilStatus.SelectedIndex = 0;
             cboCitizenship.SelectedIndex = 0;
+            cboElemGrad.SelectedIndex = 0;
+            cboHsGrad.SelectedIndex = 0;
+            cboCollegeGrad.SelectedIndex = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -48,16 +51,57 @@ namespace AttendanceAndPayrollSystem.Registration
                 Religion = txtReligion.Text
             };
 
+            if (!string.IsNullOrEmpty(txtElementary.Text))
+                model.EducationalAttainments.Add(new EducationalAttainmentModel
+                {
+                    SchoolAttended = txtElementary.Text,
+                    YearGraduated = cboElemGrad.SelectedItem.ToString(),
+                    Qualification = txtElemRemarks.Text
+                });
+            if (!string.IsNullOrEmpty(txtHighSchool.Text))
+                model.EducationalAttainments.Add(new EducationalAttainmentModel
+                {
+                    SchoolAttended = txtHighSchool.Text,
+                    YearGraduated = cboHsGrad.SelectedItem.ToString(),
+                    Qualification = txtHsRemarks.Text
+                });
+            if (!string.IsNullOrEmpty(txtCollege.Text))
+                model.EducationalAttainments.Add(new EducationalAttainmentModel
+                {
+                    SchoolAttended = txtCollege.Text,
+                    YearGraduated = cboCollegeGrad.SelectedItem.ToString(),
+                    Qualification = txtCollegeRemarks.Text
+                });
+
             var employee = new EmployeeRepository();
             if (employee.Create(model) == -1)
                 MessageBox.Show("Failed on saving record");
             else
             {
                 MessageBox.Show("Successfully saved!");
-                txtSurname.Clear();
-                txtFirstname.Clear();
+                txtSurname.ResetText();
+                txtFirstname.ResetText();
+                txtMiddlename.ResetText();
+                dtDob.ResetText();
+                rbMale.Checked = !(rbFemale.Checked = false);
+                txtBarangay.ResetText();
+                txtStreet.ResetText();
+                txtCity.ResetText();
+                cboCitizenship.SelectedIndex = 0;
+                cboCivilStatus.SelectedIndex = 0;
+                txtReligion.ResetText();
 
+                txtElementary.ResetText();
+                cboElemGrad.SelectedIndex = 0;
+                txtElemRemarks.ResetText();
 
+                txtHighSchool.ResetText();
+                cboHsGrad.SelectedIndex = 0;
+                txtHsRemarks.ResetText();
+
+                txtCollege.ResetText();
+                cboCollegeGrad.SelectedIndex = 0;
+                txtCollegeRemarks.ResetText();
             }
 
         }

@@ -20,5 +20,7 @@ namespace AttendanceAndPayrollSystem.Database.Models
         public string Citizenship { get; set; }
         public string Religion { get; set; }
         public string CivilStatus { get; set; }
+
+        public ICollection<EducationalAttainmentModel> EducationalAttainments { get; set; } = new List<EducationalAttainmentModel>();
     }
 }
