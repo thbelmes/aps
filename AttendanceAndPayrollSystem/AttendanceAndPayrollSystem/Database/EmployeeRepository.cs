@@ -27,8 +27,11 @@ namespace AttendanceAndPayrollSystem.Database
                     using (var sqlTransaction = sqlConnection.BeginTransaction())
                     {
                         // sql insert template
+                        //"$" yung sign na yan parang "++" lang tulad sa java
+                        //"@"=variables para sa fieldname
+
                         var sql = $"INSERT INTO {TableName}(LastName, FirstName, MiddleName, Birthdate, Sex, Barangay, Street, City, Citizenship, Religion, CivilStatus)" +
-                           $"VALUES (@lastName, @firstName, @middleName, @bday, @sex, @barangay, @street, @city, @citizenship, @religion, @civilStatus) {SelectScopeIdentitySql()}"; // this adds a select scope_identity() sql to the query to return the new ID
+                           $"VALUES (@lastName, @firstName, @middleName, @bday, @sex, @barangay, @street, @city, @citizenship, @religion, @civilStatus) {SelectScopeIdentitySql()}"; // this adds a select scope_identity() sql is to the query to return the new ID
 
                         // generates an insert sql statement with the parameters
                         var insertSql = SqlDebugHelper.CreateExecutableSqlStatement(sql, CommandType.Text,
