@@ -54,7 +54,10 @@ namespace AttendanceAndPayrollSystem.Registration
             else
             {
                 MessageBox.Show("Successfully saved!");
-                // TODO : Clear values
+                txtSurname.Clear();
+                txtFirstname.Clear();
+
+
             }
 
         }
