@@ -38,5 +38,10 @@ namespace AttendanceAndPayrollSystem
             // prompt invalid message
             MessageBox.Show("Username or password is invalid");
         }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
