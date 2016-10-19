@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,12 +37,6 @@
             this.btnRegistration = new System.Windows.Forms.Button();
             this.tabEmployee = new System.Windows.Forms.TabPage();
             this.gridEmployees = new System.Windows.Forms.DataGridView();
-            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tabAttendance = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.apsDataSet = new AttendanceAndPayrollSystem.apsDataSet();
-            this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.employeesTableAdapter = new AttendanceAndPayrollSystem.apsDataSetTableAdapters.EmployeesTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,16 +49,24 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.employeesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.apsDataSet = new AttendanceAndPayrollSystem.apsDataSet();
+            this.tabAttendance = new System.Windows.Forms.TabPage();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.employeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.employeesTableAdapter = new AttendanceAndPayrollSystem.apsDataSetTableAdapters.EmployeesTableAdapter();
+            this.apsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.tabMain.SuspendLayout();
             this.tabHome.SuspendLayout();
             this.tabEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployees)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).BeginInit();
             this.tabAttendance.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apsDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,20 +77,21 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1341, 24);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(1788, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
             this.aboutToolStripMenuItem.Text = "&About";
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(45, 24);
             this.exitToolStripMenuItem.Text = "&Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -103,11 +105,12 @@
             this.tabMain.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.tabMain.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabMain.ItemSize = new System.Drawing.Size(26, 200);
-            this.tabMain.Location = new System.Drawing.Point(0, 24);
+            this.tabMain.Location = new System.Drawing.Point(0, 28);
+            this.tabMain.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabMain.Multiline = true;
             this.tabMain.Name = "tabMain";
             this.tabMain.SelectedIndex = 0;
-            this.tabMain.Size = new System.Drawing.Size(1341, 781);
+            this.tabMain.Size = new System.Drawing.Size(1788, 963);
             this.tabMain.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tabMain.TabIndex = 1;
             this.tabMain.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tabMain_MouseClick);
@@ -116,17 +119,19 @@
             // 
             this.tabHome.Controls.Add(this.btnRegistration);
             this.tabHome.Location = new System.Drawing.Point(204, 4);
+            this.tabHome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabHome.Name = "tabHome";
-            this.tabHome.Size = new System.Drawing.Size(1133, 773);
+            this.tabHome.Size = new System.Drawing.Size(1580, 955);
             this.tabHome.TabIndex = 2;
             this.tabHome.Text = "H O M E";
             this.tabHome.UseVisualStyleBackColor = true;
             // 
             // btnRegistration
             // 
-            this.btnRegistration.Location = new System.Drawing.Point(143, 93);
+            this.btnRegistration.Location = new System.Drawing.Point(191, 114);
+            this.btnRegistration.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistration.Name = "btnRegistration";
-            this.btnRegistration.Size = new System.Drawing.Size(138, 95);
+            this.btnRegistration.Size = new System.Drawing.Size(184, 117);
             this.btnRegistration.TabIndex = 0;
             this.btnRegistration.Text = "Registration";
             this.btnRegistration.UseVisualStyleBackColor = true;
@@ -136,9 +141,10 @@
             // 
             this.tabEmployee.Controls.Add(this.gridEmployees);
             this.tabEmployee.Location = new System.Drawing.Point(204, 4);
+            this.tabEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabEmployee.Name = "tabEmployee";
-            this.tabEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEmployee.Size = new System.Drawing.Size(1133, 773);
+            this.tabEmployee.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabEmployee.Size = new System.Drawing.Size(1580, 955);
             this.tabEmployee.TabIndex = 0;
             this.tabEmployee.Text = "Employee";
             this.tabEmployee.UseVisualStyleBackColor = true;
@@ -161,60 +167,13 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.gridEmployees.DataSource = this.employeesBindingSource1;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.gridEmployees.DefaultCellStyle = dataGridViewCellStyle1;
             this.gridEmployees.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gridEmployees.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-            this.gridEmployees.Location = new System.Drawing.Point(3, 81);
+            this.gridEmployees.Location = new System.Drawing.Point(4, 163);
+            this.gridEmployees.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gridEmployees.Name = "gridEmployees";
-            this.gridEmployees.Size = new System.Drawing.Size(1127, 689);
+            this.gridEmployees.Size = new System.Drawing.Size(1572, 788);
             this.gridEmployees.TabIndex = 0;
-            // 
-            // employeesBindingSource
-            // 
-            this.employeesBindingSource.DataMember = "Employees";
-            // 
-            // tabAttendance
-            // 
-            this.tabAttendance.Controls.Add(this.dataGridView1);
-            this.tabAttendance.Location = new System.Drawing.Point(204, 4);
-            this.tabAttendance.Name = "tabAttendance";
-            this.tabAttendance.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAttendance.Size = new System.Drawing.Size(1133, 773);
-            this.tabAttendance.TabIndex = 1;
-            this.tabAttendance.Text = "Attendance";
-            this.tabAttendance.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 74);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1127, 696);
-            this.dataGridView1.TabIndex = 0;
-            // 
-            // apsDataSet
-            // 
-            this.apsDataSet.DataSetName = "apsDataSet";
-            this.apsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // employeesBindingSource1
-            // 
-            this.employeesBindingSource1.DataMember = "Employees";
-            this.employeesBindingSource1.DataSource = this.apsDataSet;
-            // 
-            // employeesTableAdapter
-            // 
-            this.employeesTableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -289,15 +248,62 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "CivilStatus";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
+            // employeesBindingSource1
+            // 
+            this.employeesBindingSource1.DataMember = "Employees";
+            this.employeesBindingSource1.DataSource = this.apsDataSet;
+            // 
+            // apsDataSet
+            // 
+            this.apsDataSet.DataSetName = "apsDataSet";
+            this.apsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabAttendance
+            // 
+            this.tabAttendance.Controls.Add(this.dataGridView1);
+            this.tabAttendance.Location = new System.Drawing.Point(204, 4);
+            this.tabAttendance.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAttendance.Name = "tabAttendance";
+            this.tabAttendance.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabAttendance.Size = new System.Drawing.Size(1580, 955);
+            this.tabAttendance.TabIndex = 1;
+            this.tabAttendance.Text = "Attendance";
+            this.tabAttendance.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView1.Location = new System.Drawing.Point(4, 94);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1572, 857);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // employeesBindingSource
+            // 
+            this.employeesBindingSource.DataMember = "Employees";
+            // 
+            // employeesTableAdapter
+            // 
+            this.employeesTableAdapter.ClearBeforeFill = true;
+            // 
+            // apsDataSetBindingSource
+            // 
+            this.apsDataSetBindingSource.DataSource = this.apsDataSet;
+            this.apsDataSetBindingSource.Position = 0;
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1341, 805);
+            this.ClientSize = new System.Drawing.Size(1788, 991);
             this.Controls.Add(this.tabMain);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -309,11 +315,12 @@
             this.tabHome.ResumeLayout(false);
             this.tabEmployee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridEmployees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).EndInit();
             this.tabAttendance.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.employeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.apsDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,6 +366,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.BindingSource apsDataSetBindingSource;
     }
 }
 
